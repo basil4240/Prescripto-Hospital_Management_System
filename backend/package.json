@@ -5,7 +5,15 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "dev": "NODE_ENV=development nodemon server.js",
+    "prod": "NODE_ENV=production node server.js",
+    "build": "npm ci --production",
+    "lint": "eslint .",
+    "test": "NODE_ENV=test jest",
+    "deploy": "npm run build && npm run prod",
+    "clean": "rm -rf node_modules",
+    "logs": "tail -f logs/app.log"
   },
   "author": "",
   "license": "ISC",
